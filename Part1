@@ -1,0 +1,38 @@
+
+
+static void Main()
+        {
+            while (true)
+            {
+                Console.WriteLine("What would you like to calculate?: \n");
+                Console.WriteLine("\t1. Basic Calculator");
+                Console.WriteLine("\t2. Tax Calculator");
+                Console.WriteLine("\t3. Mortgage Calculator");
+                Console.WriteLine("\t4. Tip Calculator");
+                int choice = Convert.ToInt32(Console.ReadLine());
+                switch (choice)
+                {
+                    case 1:
+                        BasicCalculator bc = new BasicCalculator();
+                        break;
+                    case 2:
+                        Console.WriteLine("Enter item price: ");
+                        double itemPrice = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("Enter tax rate: ");
+                        double taxRate = Convert.ToDouble(Console.ReadLine());
+                        TaxCalculator tc = new TaxCalculator(itemPrice, taxRate);
+                        break;
+                    case 3:
+                        Console.WriteLine("Enter purchase price: ");
+                        double purchasePrice = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("Enter interest rate: ");
+                        double interestRate = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("Enter loan term years: ");
+                        double loanTermYears = Convert.ToDouble(Console.ReadLine());
+                        MortgageCalculator mc = new MortgageCalculator(purchasePrice, interestRate, loanTermYears);
+                        break;
+                    case 4:
+                        //TipCalculator tc = new TipCalculator();
+                        break;
+                }
+            }
